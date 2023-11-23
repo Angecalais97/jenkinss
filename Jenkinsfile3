@@ -1,10 +1,16 @@
-stage('Artifactory') {
+pipeline {
     agent { dockerfile true }
-    steps {
-        script {
-            sh '''
-                git --version 
-            '''
+    stages {
+        stage('test') {
+            steps {
+                script {
+                    sh '''
+                        node --version
+                        git --version
+                        curl --version
+                    '''
+                }
+            }
         }
     }
 }
