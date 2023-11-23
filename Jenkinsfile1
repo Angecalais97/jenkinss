@@ -7,15 +7,9 @@ pipeline {
         }
     }
     stages {
-        stage('setup') {
-            steps {
-                sh 'echo "Setting up environment"'
-                // Add any other setup steps you may need in this stage
-            }
-        }
         stage('test') {
             steps {
-                sh 'node --version'
+                sh 'mvn --version'
             }
         }
     }
