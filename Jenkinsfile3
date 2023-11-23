@@ -1,0 +1,10 @@
+stage('Artifactory') {
+    agent { dockerfile true }
+    steps {
+        script {
+            sh '''
+                git --version 
+            '''
+        }
+    }
+}
